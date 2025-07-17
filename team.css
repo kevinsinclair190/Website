@@ -1,0 +1,90 @@
+
+.plus{
+    font-size: larger;
+    text-align: center;
+    margin-right: -30px;
+    margin-bottom: 50px;
+    font-weight: 700;
+
+    font-size: 1.5rem;
+    color: rgb(1, 1, 1);
+}
+.team-section {
+  padding: auto;
+  text-decoration-line: underline; color: rgb(5, 5, 5);
+  
+}
+.hello {
+  background-image: url('https://images.pexels.com/photos/28957525/pexels-photo-28957525.jpeg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.team-heading {
+  text-align: center;
+  margin-bottom: 100px;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.team-member {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.team-member img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 15px;
+  border: 4px solid #050607;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.member-name {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: rgb(10, 11, 11);
+}
+
+.member-role {
+  color: #2c2c95;
+  font-size: 0.95rem ;
+}
+.team-member {
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.team-member img {
+  width: 100%;
+  max-width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 4px solid #0a0a0b;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  transition: 0.3s ease;
+}
+
+.team-member:hover img {
+  transform: scale(1.05);
+}
+
+.member-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #727474;
+}
+
+.member-role {
+  font-size: 0.95rem;
+  color: #fafaf7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

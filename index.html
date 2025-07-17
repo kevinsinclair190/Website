@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisualMint - Absolute Valuable 3D Models</title>
+
+    <script src="script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css"> <!-- Your custom styles -->
+
+</head>
+<body>
+       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-cube"></i>Visual<span class="indian-theme">Mint</span>
+            </a>
+            <button class="navbar-toggler">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#models">Models</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item position-relative">
+                        <a class="nav-link" href="#cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-badge">0</span>
+                        </a>
+                    </li>
+  <li class="nav-item">
+  <a class="btn btn-login" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+    <i class="fas fa-sign-in-alt"></i> Login
+  </a>
+</li>
+  </a>
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Explore a World of 3D – Assets for Every Imagination.</h1>
+                <p>"A trusted source for premium 3D models — tailored for design, animation, and development."</p>
+                <div class="hero-buttons">
+                    <a href="#models" class="btn btn-primary">Explore Models</a>
+                    <a href="#features" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models Gallery -->
+    <section id="models" class="py-5">
+
+        <div class="container">
+            <h2 class="section-title">Featured 3D Assets</h2>
+            
+            <!-- Search & Filters -->
+            <div class="filters">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search 3D models...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+
+       </div>
+            
+            <!-- Model Cards -->
+            <div class="model-gallery" id="model-container">
+                <!-- Models will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Model Viewer -->
+    <section id="model-viewer-section" class="model-viewer-section">
+        <div class="container">
+            <div class="model-viewer-wrapper">
+                <div class="model-viewer" id="model-viewer">
+                    <!-- 3D model will be rendered here -->
+                </div>
+                <div class="model-details">
+                    <h2 id="model-title">Traditional Indian Diya</h2>
+                    <div class="model-pricing">
+                        <h3 class="price">₹100</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(24 reviews)</span>
+                        </div>
+                    </div>
+                
+                    <div class="file-formats">
+                        <h5>File Formats</h5>
+                        <div class="format-badges">
+                            <span>GLTF</span>
+                            <span>FBX</span>
+                            <span>OBJ</span>
+                            <span>BLEND</span>
+                        </div>
+                    </div>
+                    
+                    <div class="model-actions">
+                        <button class="btn btn-primary" id="add-to-cart">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="technical-details">
+                        <h5>Technical Details</h5>
+                        <ul>
+                            <li>Vertices: 2,480</li>
+                            <li>Polygons: 1,850</li>
+                            <li>Textures: 4K Resolution</li>
+                            <li>Rigged: No</li>
+                            <li>Animated: No</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose VisualMint?</h2>
+            <p class="section-subtitle">Your creative hub for production-ready 3D assets — built for artists everywhere.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h4>Priced in ₹ Rupees</h4>
+                    <p>No currency conversion fees. All prices in Indian rupees with local payment options.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h4>Authentic  Assets</h4>
+                    <p>Culturally accurate models created by  artists who understand our Needs.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4>Optimized for Performance</h4>
+                    <p>All models are optimized for real-time rendering with clean topology and LODs.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-download"></i>
+                    </div>
+                    <h4>Multiple Formats</h4>
+                    <p>Download in GLTF, FBX, OBJ, or BLEND formats for any 3D software or game engine.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>Local Support</h4>
+                    <p>Dedicated support team available during Indian business hours with quick response times.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h4>Affordable Pricing</h4>
+                    <p>High-quality assets priced for Indian budgets. Regular discounts for students.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About VisualMint</h2>
+                    <p class="lead">We're on a mission to create a world-class 3D asset marketplace tailored for Indian creators.</p>
+                    <p>India3D was born out of a frustration with existing platforms that don't understand the needs of Indian designers, developers, and artists. Our models are created by Indian artists who understand our culture, architecture, and design sensibilities.</p>
+                    <p>We believe that by providing affordable, high-quality assets priced in rupees with local payment options, we can empower India's creative community to build amazing projects without financial barriers.</p>
+                    <div class="about-buttons">
+                        <a href="team.html" class="btn btn-outline">
+                            <i class="fas fa-users"></i> Meet Our Team
+                        </a>
+                        <a href="#careers" class="btn btn-outline">
+                            <i class="fas fa-briefcase"></i> Careers
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="creator-community">
+                    <h3>Join Our Creator Community</h3>
+                    <p>Are you a 3D artist? Submit your models to our marketplace and earn money from your creations!</p>
+                    <ul>
+                        <li>Competitive royalty rates (up to 70%)</li>
+                        <li>Work from anywhere in India</li>
+                        <li>Join our artist training program</li>
+                        <li>Get featured in our newsletter</li>
+                    </ul>
+                    <button class="btn btn-primary" id="apply-artist">
+                       <a href="apply.html" class="btn btn-india" style="color: azure;">
+    <i class="fas fa-paint-brush me-2"></i> Apply as Artist
+</a>
+        </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart -->
+    <section id="cart" class="cart-section">
+        <div class="container">
+            <h2 class="section-title">Your Shopping Cart</h2>
+            
+            <div class="cart-wrapper">
+                <div class="cart-items">
+                    <div id="cart-items-container">
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h4>Your cart is empty</h4>
+                            <p>Browse our collection and add some amazing 3D models!</p>
+                            <a href="#models" class="btn btn-primary">Explore Models</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-item">
+                        <span>Subtotal:</span>
+                        <span id="cart-subtotal">₹0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>GST (18%):</span>
+                        <span id="cart-tax">₹0</span>
+                    </div>
+                    <div class="summary-item discount">
+                        <span>Discount:</span>
+                        <span id="cart-discount">-₹0</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span id="cart-total">₹0</span>
+                    </div>
+                    <button class="btn btn-primary checkout-btn">Proceed to Checkout</button>
+                    <div class="payment-methods">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/800px-Visa_Inc._logo.svg.png" alt="Visa">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/800px-MasterCard_Logo.svg.png" alt="Mastercard">
+                        <img src="https://www.electronicpaymentsinternational.com/wp-content/uploads/sites/4/2021/11/1280px-Rupay-Logo.png" alt="RuPay">
+                        <img src="https://images.icon-icons.com/2699/PNG/512/upi_logo_icon_169316.png" alt="UPI">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Have questions or need support? Reach out to our team.</p>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>support@VisualMint.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 7349791984</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Office</h4>
+                            <p>4th & 5th Floor,Prestige Falcon Tower,Municipal #19 Brunton Rd,Craig Park Layout,Richmond Town,Bengaluru, Karnataka 560025</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><i class="fas fa-cube"></i>Visual<span class="italian-theme">Mint</span></h3>
+                    <p>Your premier destination for high-quality 3D assets — crafted for creators, trusted worldwide.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#models">Models</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Be the first to know about offers, launches, and creative updates.</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 VisualMint. All rights reserved.</p>
+                <div class="footer-india">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/800px-Flag_of_India.svg.png" alt="India">
+                    <span>Crafted for Every Creator</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content custom-modal">
+      <div class="modal-header">
+        <h5 class="modal-title">Login to India3D</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="loginForm">
+        <div class="modal-body">
+          <div class="form-group mb-3">
+            <label>Email</label>
+            <input type="email" id="loginEmail" class="form-control" required>
+          </div>
+          <div class="form-group mb-3">
+            <label>Password</label>
+            <input type="password" id="loginPassword" class="form-control" required>
+          </div>
+          <div class="text-end">
+            <a href="#" class="text-decoration-none">Forgot Password?</a>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary w-100">Login</button>
+          <p class="text-center mt-2">Don't have an account? 
+            <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Signup Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content custom-modal">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Your India3D Account</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="signupForm">
+        <div class="modal-body">
+          <div class="form-group mb-3">
+            <label>Full Name</label>
+            <input type="text" id="signupName" class="form-control" required>
+          </div>
+          <div class="form-group mb-3">
+            <label>Email</label>
+            <input type="email" id="signupEmail" class="form-control" required>
+          </div>
+          <div class="form-group mb-3">
+            <label>Password</label>
+            <input type="password" id="signupPassword" class="form-control" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+          <p class="text-center mt-2">Already have an account? 
+            <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Your custom script -->
+<script src="script.js"></script>
+
+<!-- Bootstrap 5 JS Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
