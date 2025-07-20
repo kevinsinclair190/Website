@@ -1,3 +1,4 @@
+
 // Initialize the website
 document.addEventListener('DOMContentLoaded', function () {
     initModelPreviews();
@@ -10,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
 // Sample model data
 const models = [
     { id: 1, name: "Donut", price: 169, category: "Food", file: "Donut" },
-    { id: 2, name: "Auto Rickshaw", price: 899, category: "vehicles",  file: "auto" },
-    { id: 3, name: "Taj Mahal", price: 1499, category: "architecture",  file: "taj" },
+    { id: 2, name: "Auto Rickshaw", price: 315, category: "vehicles",  file: "auto" },
+    { id: 3, name: "Taj Mahal", price: 700, category: "architecture",  file: "taj" },
 ];
 
 let cart = [];
@@ -21,7 +22,7 @@ function initModelPreviews() {
     const previewContainers = document.querySelectorAll('.model-preview');
     previewContainers.forEach(container => {
         const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0xf8f9fa);
+        scene.background = new THREE.Color(0xeef2f7);
 
         const aspect = container.clientWidth / container.clientHeight;
         const camera = new THREE.PerspectiveCamera(50, aspect, 0.1, 1000);
@@ -38,10 +39,11 @@ function initModelPreviews() {
         directionalLight.position.set(10, 20, 15);
         scene.add(directionalLight);
 
-        const geometry = new THREE.BoxGeometry(1.5, 1, 1);
-        const material = new THREE.MeshPhongMaterial({ color: 0x4e54c8, shininess: 60 });
+        const geometry = new THREE.BoxGeometry(1.0, 1, 1);
+        const material = new THREE.MeshPhongMaterial({ color: 0000, shininess: 60 });
         const mesh = new THREE.Mesh(geometry, material);
         scene.add(mesh);
+        
 
         function animate() {
             requestAnimationFrame(animate);

@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "My GitHub Web App",
+  "version": "1.0",
+  "description": "Launch my GitHub Pages site in a new tab",
+  "action": {
+    "default_title": "Open My Web App"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["tabs"]
+}
